@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Dialog } from '@headlessui/react'
 import { Bars3Icon, XMarkIcon } from '@heroicons/react/24/outline'
+import {Link, Navigate, useNavigate} from 'react-router-dom'
 
 const navigation = [
   { name: 'Product', href: '#' },
@@ -9,9 +10,10 @@ const navigation = [
   { name: 'Company', href: '#' },
 ]
 
+
 export default function Example() {
   const [mobileMenuOpen, setMobileMenuOpen] = useState(false)
-
+  const navigator = useNavigate();
   return (
     <div className="bg-white">
       <header className="absolute inset-x-0 top-0 z-50">
@@ -44,7 +46,8 @@ export default function Example() {
             ))}
           </div>
           <div className="hidden lg:flex lg:flex-1 lg:justify-end">
-            <a href="#" className="text-sm font-semibold leading-6 text-gray-900">
+            
+            <a href="#"onClick={()=>navigator('/login')} className="text-sm font-semibold leading-6 text-gray-900">
               Log in <span aria-hidden="true">&rarr;</span>
             </a>
           </div>
@@ -130,7 +133,7 @@ export default function Example() {
             </p>
             <div className="mt-10 flex items-center justify-center gap-x-6">
               <a
-                href="#"
+                href="#" onClick={()=>navigator('/signup')}
                 className="rounded-md bg-indigo-600 px-3.5 py-2.5 text-sm font-semibold text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
                 Get started

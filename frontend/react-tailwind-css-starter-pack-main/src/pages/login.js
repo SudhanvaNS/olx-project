@@ -1,5 +1,44 @@
 
+// import {
+//   Input,
+//   Ripple,
+//   initTE,
+// } from "tw-elements";
+
+import { useState } from 'react'
+import {Link, Navigate, useNavigate} from 'react-router-dom'
+// initTE({ Input, Ripple });
 export default function Example() {
+  const [email, setEmail] = useState('')
+  const [password, setPassword] = useState('')
+  const onSubmit = async (e) => {
+    e.preventDefault()
+    const data = {
+      email: email,
+      password: password,
+    };
+
+    try {
+      const response = await fetch('http://127.0.0.1:4000/api/v1/auth/login', {
+        method: 'POST',
+        headers: {
+          'Content-Type': 'application/json', // Specify JSON content type
+        },
+        body: JSON.stringify(data), // Convert data object to JSON string
+      });
+
+      if (response.ok) {
+        // Request was successful
+        const responseData = await response.json(); // Parse response JSON
+        console.log('Response Data:', responseData);
+      } else {
+        // Handle error case
+        console.error('Request failed:', response.statusText);
+      }
+    } catch (error) {
+      console.error('Error:', error);
+    }
+  };
     return (
       <>
         {/*
@@ -23,16 +62,16 @@ export default function Example() {
           </div>
   
           <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-            <form className="space-y-6" action="#" method="POST">
+            <form className="space-y-6">
               <div>
                 <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                   Email address
                 </label>
                 <div className="mt-2">
                   <input
-                    id="email"
+                    id="email" onChange={(e)=>setEmail(e.target.value)}
                     name="email"
-                    type="email"
+                    type="email" 
                     autoComplete="email"
                     required
                     className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
@@ -53,7 +92,7 @@ export default function Example() {
                 </div>
                 <div className="mt-2">
                   <input
-                    id="password"
+                    id="password" onChange={e=>setPassword(e.target.value)}
                     name="password"
                     type="password"
                     autoComplete="current-password"
@@ -65,7 +104,7 @@ export default function Example() {
   
               <div>
                 <button
-                  type="submit"
+                  type="submit" onClick={onSubmit}
                   className="flex w-full justify-center rounded-md bg-indigo-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-indigo-500 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
                 >
                   Sign in

@@ -1,6 +1,7 @@
 // Importing necessary modules and packages
 const express = require("express");
 const app = express();
+const cors = cors();
 const userRoutes = require("./routes/user");
 const productRoutes = require("./routes/product");
 const database = require("./config/database");
@@ -9,7 +10,7 @@ const cors = require("cors");
 const { cloudinaryConnect } = require("./config/cloudinary");
 const fileUpload = require("express-fileupload");
 const dotenv = require("dotenv");
-
+app.use(cors())
 // Setting up port number
 const PORT = process.env.PORT || 4000;
 
