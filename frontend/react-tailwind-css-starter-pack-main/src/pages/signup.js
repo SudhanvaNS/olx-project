@@ -52,202 +52,140 @@ function Signup() {
     }
   };
   return (
-    <section class="h-screen dark:bg-gray-900 dark:text-white">
-      <div class="h-full">
-        {/* <!-- Left column container with background--> */}
-        <div class="g-6 flex h-full flex-wrap items-center justify-center lg:justify-between">
-          <div class="shrink-1 mb-12 grow-0 basis-auto md:mb-0 md:w-9/12 md:shrink-0 lg:w-6/12 xl:w-6/12">
-            <img
-              src="https://tecdn.b-cdn.net/img/Photos/new-templates/bootstrap-login-form/draw2.webp"
-              class="w-full"
-              alt="Sample image"
-            />
-          </div>
+    <>
+    {/*
+      This example requires updating your template:
 
-          {/* <!-- Right column container --> */}
-          <div class="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
-            <form  onSubmit={onSubmit} action='/login'> 
-              {/* <!--Sign in section--> */}
-              <div class="flex flex-row items-center justify-center lg:justify-start">
-                <p class="mb-0 mr-4 text-lg">Sign up</p>
-              </div>
-
-              {/* <!-- Separator between social media sign in and email/password sign in --> */}
-              <div class="my-4 flex items-center before:mt-0.5 before:flex-1 before:border-t before:border-neutral-300 after:mt-0.5 after:flex-1 after:border-t after:border-neutral-300">
-                <p class="mx-4 mb-0 text-center font-semibold dark:text-white"></p>
-              </div>
-
-
-
-
-              <div class="relative mb-6" data-te-input-wrapper-init>
-                <input 
-                  style={{
-                    border: "1px solid black",
-                    width: "70%",
-                    color: "black",
-                    backgroundColor: "whitesmoke",
-                  }}
-                  type="text" 
-                  onChange={(e)=>setfirstname(e.target.value)}
-                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                  id="exampleFormControlInput2"
-                  placeholder="name"
-                />
-                <label
-                  for="exampleFormControlInput2"
-                  style={{ color: "black" }} 
-                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                >
-                  {firstname && 'First Name'}
-                </label>
-              </div>
-
-              {/* <!-- Email input --> */}
-              <div class="relative mb-6" data-te-input-wrapper-init>
-                <input 
-                  style={{
-                    border: "1px solid black",
-                    width: "70%",
-                    color: "black",
-                    backgroundColor: "whitesmoke",
-                  }}
-                  type="text" 
-                  onChange={(e)=>setlastName(e.target.value)}
-                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                  id="exampleFormControlInput2"
-                  placeholder="Email address"
-                />
-                <label
-                  for="exampleFormControlInput2"
-                  style={{ color: "black" }} 
-                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                >
-                  {lastName && 'Last Name'}
-                </label>
-              </div>
-
-                  
-              <div class="relative mb-6" data-te-input-wrapper-init>
-                <input 
-                  style={{
-                    border: "1px solid black",
-                    width: "70%",
-                    color: "black",
-                    backgroundColor: "whitesmoke",
-                  }}
-                  type="text" 
-                  onChange={(e)=>setEmail(e.target.value)}
-                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                  id="exampleFormControlInput2"
-                  placeholder="Email address"
-                />
-                <label
-                  for="exampleFormControlInput2"
-                  style={{ color: "black" }} 
-                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                >
-                  {email && 'Email address'}
-                </label>
-              </div>
-              {/* <!-- Password input --> */}
-              <div class="relative mb-6" data-te-input-wrapper-init>
-                <input
-                  type="password" 
-                  onChange={(e)=>setPassword(e.target.value)}
-                  style={{
-                    border: "1px solid black",
-                    width: "70%",
-                    backgroundColor: "whitesmoke",
-                    color: 'black'
-                  }}
-                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                  id="exampleFormControlInput22"
-                  placeholder="Password"
-                />
-                <label
-                  for="exampleFormControlInput22"
-                  style={{ color: "black" }}
-                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                >
-                  {password && 'Password'}
-                </label>
-              </div>
-
-              <div class="relative mb-6" data-te-input-wrapper-init>
-                <input
-                  type="password" 
-                  onChange={(e)=>setConfirmPassword(e.target.value)}
-                  style={{
-                    border: "1px solid black",
-                    width: "70%",
-                    backgroundColor: "whitesmoke",
-                    color: 'black'
-                  }}
-                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                  id="exampleFormControlInput22"
-                  placeholder="Password"
-                />
-                <label
-                  for="exampleFormControlInput22"
-                  style={{ color: "black" }}
-                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                >
-                 
-                  {confirmPassword && 'Conform Password'}
-                </label>
-              </div>
-              <div class="relative mb-6" data-te-input-wrapper-init>
-                <input
-                  type="number" 
-                  onChange={(e)=>setPhoneNumber(e.target.value)}
-                  style={{
-                    border: "1px solid black",
-                    width: "70%",
-                    backgroundColor: "whitesmoke",
-                    color: 'black'
-                  }}
-                  class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
-                  id="exampleFormControlInput22"
-                  placeholder="Password"
-                />
-                <label
-                  for="exampleFormControlInput22"
-                  style={{ color: "black" }}
-                  class="pointer-events-none absolute left-3 top-0 mb-0 max-w-[90%] origin-[0_0] truncate pt-[0.37rem] leading-[2.15] text-neutral-500 transition-all duration-200 ease-out peer-focus:-translate-y-[1.15rem] peer-focus:scale-[0.8] peer-focus:text-primary peer-data-[te-input-state-active]:-translate-y-[1.15rem] peer-data-[te-input-state-active]:scale-[0.8] motion-reduce:transition-none dark:text-neutral-200 dark:peer-focus:text-primary"
-                >
-                  {phoneNumber && 'Phone Number'}
-                </label>
-              </div>
-
-
-              {/* <!-- Login button --> */}
-              <div class="text-center lg:text-left"> 
-                <button
-                  type="submit"
-                  class="inline-block rounded bg-blue-500 px-7 pb-2.5 pt-3 text-sm font-medium uppercase leading-normal text-black shadow-[0_4px_9px_-4px_#3b71ca] transition duration-150 ease-in-out hover:bg-blue-600 hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:bg-blue-600 focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] focus:outline-none focus:ring-0 active:bg-blue-700 active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.3),0_4px_18px_0_rgba(59,113,202,0.2)] dark:shadow-[0_4px_9px_-4px_rgba(59,113,202,0.5)] dark:hover:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:focus:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)] dark:active:shadow-[0_8px_9px_-4px_rgba(59,113,202,0.2),0_4px_18px_0_rgba(59,113,202,0.1)]"
-                  data-te-ripple-init
-                  data-te-ripple-color="light"
-                >
-                  Sign up
-                </button>
-
-                {/* <!-- Register link --> */}
-                <p class="mb-0 mt-2 pt-1 text-sm font-semibold">
-                  Don't have an account?
-                  <a
-                    href="#!"
-                    class="text-danger transition duration-150 ease-in-out hover:text-danger-600 focus:text-danger-600 active:text-danger-700"
-                  >
-                    Register
-                  </a>
-                </p>
-              </div>
-            </form>
-          </div>
-        </div>
+      ```
+      <html class="h-full bg-white">
+      <body class="h-full">
+      ```
+    */}
+    <div className="flex min-h-full flex-1 flex-col justify-center px-6 py-12 lg:px-8">
+      <div className="sm:mx-auto sm:w-full sm:max-w-sm">
+        <img
+          className="mx-auto h-10 w-auto"
+          src=""
+          alt="Your Company"
+        />
+        <h2 className="mt-10 text-center text-2xl font-bold leading-9 tracking-tight text-gray-900">
+          Sign Up to your account
+        </h2>
       </div>
-    </section>
+
+      <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
+        <form className="space-y-6">
+          <div>
+            <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              Email address
+            </label>
+            <div className="mt-2">
+              <input
+                id="email" onChange={(e)=>setEmail(e.target.value)}
+                name="email"
+                type="email" 
+                autoComplete="email"
+                required
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+          <div>
+            <div className="flex items-center justify-between">
+              <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
+                Password
+              </label>
+
+            </div>
+            <div className="mt-2">
+              <input
+                id="password" onChange={e=>setPassword(e.target.value)}
+                name="password"
+                type="password"
+                autoComplete="current-password"
+                required
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+
+
+          <div>
+            <label htmlFor="confirmPassword" className="block text-sm font-medium leading-6 text-gray-900">
+              ConfirmPassword
+            </label>
+            <div className="mt-2">
+              <input
+                id="confirmPasswordl" onChange={(e)=>setConfirmPassword(e.target.value)}
+                name="confirmPassword"
+                type="confirmPassword" 
+                autoComplete="confirmPassword"
+                required
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="firstName" className="block text-sm font-medium leading-6 text-gray-900">
+              FirstName
+            </label>
+            <div className="mt-2">
+              <input
+                id="firstName" onChange={(e)=>setfirstname(e.target.value)}
+                name="firstName"
+                type="firstName" 
+                autoComplete="firstName"
+                required
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="lastname" className="block text-sm font-medium leading-6 text-gray-900">
+              LastName
+            </label>
+            
+            <div className="mt-2">
+              <input
+                id="lastname" onChange={(e)=>setlastName(e.target.value)}
+                name="lastname"
+                type="lastname" 
+                autoComplete="email"
+                required
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <label htmlFor="PhoneNumber" className="block text-sm font-medium leading-6 text-gray-900">
+              PhoneNumber
+            </label>
+            <div className="mt-2">
+              <input
+                id="PhoneNumber" onChange={(e)=>setPhoneNumber(e.target.value)}
+                name="PhoneNumber"
+                type="PhoneNumber" 
+                autoComplete="PhoneNumber"
+                required
+                className="block w-full rounded-md border-0 py-1.5 text-gray-900 shadow-sm ring-1 ring-inset ring-gray-300 placeholder:text-gray-400 focus:ring-2 focus:ring-inset focus:ring-indigo-600 sm:text-sm sm:leading-6"
+              />
+            </div>
+          </div>
+          <div>
+            <button
+              type="submit" onClick={onSubmit}
+              className="flex w-full justify-center rounded-md bg-green-600 px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-green-400 focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
+            >
+              Sign in
+            </button>
+          </div>
+        </form>
+
+        
+      </div>
+    </div>
+  </>
   );
 }
 export default Signup;

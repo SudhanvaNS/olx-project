@@ -12,13 +12,13 @@ const {
   deleteProduct
 } = require("../controllers/products")
 // Importing Middlewares
-// const { auth} = require("../middleware/auth")
+const { auth} = require("../middleware/auth")
 // Courses can Only be Created by Instructors
-router.post("/createProduct",createProduct)
+router.post("/createproduct",auth,createProduct)
 // Get all Registered Courses
-router.get("/getAllProduct",getAllProduct)
+router.get("/getAllProduct",auth,getAllProduct)
 // Get Details for a Specific Courses
-router.get("/getFullProductDetais/:id", getFullProductDetails)
+router.get("/getFullProductDetais/:id", auth,getFullProductDetails)
 // Delete a Course
-router.delete("/deleteProduct", deleteProduct)
+router.delete("/deleteProduct",auth, deleteProduct)
 module.exports = router

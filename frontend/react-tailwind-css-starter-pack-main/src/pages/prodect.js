@@ -3,29 +3,29 @@ import { StarIcon } from '@heroicons/react/20/solid'
 import { RadioGroup } from '@headlessui/react'
 
 const product = {
-  name: 'Basic Tee 6-Pack',
-  price: '$192',
+  name: 'FX-991ES',
+  price: '₹192',
   href: '#',
   breadcrumbs: [
-    { id: 1, name: 'Men', href: '#' },
+    { id: 1, name: 'Home', href: '/' },
     { id: 2, name: 'products', href: '/getallone' },
 
   ],
   images: [
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-secondary-product-shot.jpg',
+      src: 'https://i.pinimg.com/originals/6f/36/95/6f36957ae723b4b4f0696152ae54b3e8.jpg',
       alt: 'Two each of gray, white, and black shirts laying flat.',
     },
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-01.jpg',
+      src: 'https://c8.alamy.com/comp/CBX2H9/casio-scientific-calculator-showing-a-trigonometry-calculation-isolated-CBX2H9.jpg',
       alt: 'Model wearing plain black basic tee.',
     },
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-tertiary-product-shot-02.jpg',
+      src: 'https://i.pinimg.com/originals/50/f4/49/50f44914865276b3832a0b76cad7d6f2.png',
       alt: 'Model wearing plain gray basic tee.',
     },
     {
-      src: 'https://tailwindui.com/img/ecommerce-images/product-page-02-featured-product-shot.jpg',
+      src: 'https://5.imimg.com/data5/SELLER/Default/2021/11/IQ/JU/MW/3177365/e-graviton-calculator-eg99ex.jpg',
       alt: 'Model wearing plain white basic tee.',
     },
   ],
@@ -45,15 +45,16 @@ const product = {
     // { name: '3XL', inStock: true },
   ],
   description:
-    'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
+    'Looking for an affordable and reliable scientific calculator? We have a used Casio FX-991ES Plus available for resale. This calculator offers advanced functions, a large display, and a durable build. It has been gently used for two years and is in excellent condition. Comes with a protective case and user manual. Get accurate results at a fraction of the price. Perfect for students and professionals. Dont miss out on this budget-friendly opportunity!',
   highlights: [
-    'Hand cut and sewn locally',
-    'Dyed with our proprietary colors',
-    'Pre-washed & pre-shrunk',
-    'Ultra-soft 100% cotton',
+    'Affordable option for students',
+    ' professionals, and hobbyists',
+    'Tested and proven performance over two years of use',
+'Well-maintained and in excellent working condition',
+'Trusted brand known for quality and durability'
   ],
   details:
-    'The 6-Pack includes two black, two white, and two heather gray Basic Tees. Sign up for our subscription service and be the first to get new, exciting colors, like our upcoming "Charcoal Gray" limited release.',
+    'We are offering this used Casio FX-991ES Plus scientific calculator for a fraction of its original price, making it a budget-friendly choice without compromising on quality.',
 }
 const reviews = { href: '#', average: 4, totalCount: 117 }
 
@@ -140,8 +141,12 @@ export default function Example() {
           {/* Options */}
           <div className="mt-4 lg:row-span-3 lg:mt-0">
             <h2 className="sr-only">Product information</h2>
-            <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
-
+            <p className="text-3xl tracking-tight text-gray-900">{product.price}
+            
+              Seller : Sudhanva N S
+              Phoneumber:8431664163
+            </p>
+           
             {/* Reviews */}
             {/* <div className="mt-6">
               <h3 className="sr-only">Reviews</h3>
@@ -264,12 +269,12 @@ export default function Example() {
                 </RadioGroup>
               </div> */}
 
-              <button
+              {/* <button
                 type="submit"
                 className="mt-10 flex w-full items-center justify-center rounded-md border border-transparent bg-indigo-600 px-8 py-3 text-base font-medium text-white hover:bg-indigo-700 focus:outline-none focus:ring-2 focus:ring-indigo-500 focus:ring-offset-2"
               >
                 Add to bag
-              </button>
+              </button> */}
             </form>
           </div>
 

@@ -3,25 +3,25 @@ import { useState } from 'react';
 export default function Sell() {
   const [phoneNumber, setphoneNumber] = useState('');
   const [productDescription, setProductDescription] = useState('');
-  const [productPrice, setProductPrice] = useState('');
-  const [selectedFile, setSelectedFile] = useState(null);
+  const [price, setProductPrice] = useState('');
+  // const [selectedFile, setSelectedFile] = useState(null);
 
-  const handleFileChange = (event) => {
-    setSelectedFile(event.target.files[0]);
-  };
+  // const handleFileChange = (event) => {
+  //   setSelectedFile(event.target.files[0]);
+  // };
 
   const handleSubmit =async (e) => {
     e.preventDefault();
     const data = {
       phoneNumber:phoneNumber,
       productDescription: productDescription,
-      productPrice: productPrice,
+      price: price,
       // selectedFile:selectedFile
      
     };
 
     try {
-      const response = await fetch('http://127.0.0.1:4000/api/v1/product/createProduct', {
+      const response = await fetch('http://127.0.0.1:4000/api/v1/product/createproduct', {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json', // Specify JSON content type
@@ -47,13 +47,13 @@ export default function Sell() {
     // For demonstration purposes, we'll just log the form data
     console.log('Product Name:', phoneNumber);
     console.log('Product Description:', productDescription);
-    console.log('Product Price:', productPrice);
-    console.log('Selected File:', selectedFile);
+    console.log('Product Price:', price);
+    // console.log('Selected File:', selectedFile);
   
 
   return (
     <div className="flex justify-center mt-10">
-      <form className="max-w-md w-full" onSubmit={(e)=>{handleSubmit(e)}}>
+      <form className="max-w-md w-full" onSubmit={handleSubmit} action='/getallone'>
         <h1 className="text-2xl font-semibold mb-4">Sell Your Product</h1>
 
         <label className="block mb-2" htmlFor="product-name">
@@ -86,12 +86,12 @@ export default function Sell() {
           type="number"
           id="product-price"
           className="w-full border border-gray-300 rounded px-3 py-2 mb-4"
-          value={productPrice}
+          value={price}
           onChange={(e) => setProductPrice(e.target.value)}
           required
         />
 
-        <label className="block mb-2" htmlFor="product-image">
+        {/* <label className="block mb-2" htmlFor="product-image">
           Product Image
         </label>
         <input
@@ -100,11 +100,11 @@ export default function Sell() {
           className="mb-4"
           onChange={handleFileChange}
           required
-        />
+        /> */}
 
         <button
-          type="submit"
-          className="bg-blue-500 hover:bg-blue-600 text-white py-2 px-4 rounded"
+          type="submit" 
+          className="bg-blue-500 hover:bg-green-600 text-white py-2 px-4 rounded"
         >
           Sell Product
         </button>
