@@ -1,23 +1,31 @@
 import React, { useState } from 'react';
  
 function Signup() {
+  // const [email, setEmail] = useState(true);
+  // const [password, setPassword] = useState(true);
+  // const [confirmPassword, setConfirmPassword] = useState(true);
+  // const [phoneNumber, setPhoneNumber] = useState(true);
+  // const[lastName,setlastName]=useState(true);
+  // const[firstname,setfirstname]=useState(true);
+
+
   const [email, setEmail] = useState(true);
   const [password, setPassword] = useState(true);
   const [confirmPassword, setConfirmPassword] = useState(true);
   const [phoneNumber, setPhoneNumber] = useState(true);
   const[lastName,setlastName]=useState(true);
   const[firstname,setfirstname]=useState(true);
-
   const onSubmit = async (e) => {
     e.preventDefault();
-    const data={  firstname: firstname,
+    const data={  firstName: firstname,
       lastName:lastName,
       email:email,
       password:password,
-      phoneNumber:phoneNumber}
+      confirmPassword:confirmPassword,
+      contactNumber:phoneNumber}
       console.log(data);
     // Check if all fields are valid before proceeding
-    if (firstname&&lastName&& email && password && confirmPassword && phoneNumber) {
+    if (firstname && lastName && email && password && confirmPassword && phoneNumber) {
       try {
         const response = await fetch('http://127.0.0.1:4000/api/v1/auth/signup', {
           method: 'POST',
@@ -78,7 +86,8 @@ function Signup() {
                     color: "black",
                     backgroundColor: "whitesmoke",
                   }}
-                  type="text" onChange={(e)=>setfirstname(e.target.value!==''?false:true)}
+                  type="text" 
+                  onChange={(e)=>setfirstname(e.target.value)}
                   class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput2"
                   placeholder="name"
@@ -101,7 +110,8 @@ function Signup() {
                     color: "black",
                     backgroundColor: "whitesmoke",
                   }}
-                  type="text" onChange={(e)=>setlastName(e.target.value!==''?false:true)}
+                  type="text" 
+                  onChange={(e)=>setlastName(e.target.value)}
                   class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput2"
                   placeholder="Email address"
@@ -124,7 +134,7 @@ function Signup() {
                     color: "black",
                     backgroundColor: "whitesmoke",
                   }}
-                  type="text" onChange={(e)=>setEmail(e.target.value!==''?false:true)}
+                  type="text" onChange={(e)=>setEmail(e.target.value)}
                   class="peer block min-h-[auto] w-full rounded border-0 bg-transparent px-3 py-[0.32rem] leading-[2.15] outline-none transition-all duration-200 ease-linear focus:placeholder:opacity-100 data-[te-input-state-active]:placeholder:opacity-100 motion-reduce:transition-none dark:text-neutral-200 dark:placeholder:text-neutral-200 [&:not([data-te-input-placeholder-active])]:placeholder:opacity-0"
                   id="exampleFormControlInput2"
                   placeholder="Email address"
@@ -140,7 +150,8 @@ function Signup() {
               {/* <!-- Password input --> */}
               <div class="relative mb-6" data-te-input-wrapper-init>
                 <input
-                  type="password" onChange={(e)=>setPassword(e.target.value!==''?false:true)}
+                  type="password" 
+                  onChange={(e)=>setPassword(e.target.value)}
                   style={{
                     border: "1px solid black",
                     width: "70%",
@@ -162,7 +173,8 @@ function Signup() {
 
               <div class="relative mb-6" data-te-input-wrapper-init>
                 <input
-                  type="password" onChange={(e)=>setConfirmPassword(e.target.value!==''?false:true)}
+                  type="password" 
+                  onChange={(e)=>setConfirmPassword(e.target.value)}
                   style={{
                     border: "1px solid black",
                     width: "70%",
@@ -184,7 +196,8 @@ function Signup() {
               </div>
               <div class="relative mb-6" data-te-input-wrapper-init>
                 <input
-                  type="number" onChange={(e)=>setPhoneNumber(e.target.value!==''?false:true)}
+                  type="number" 
+                  onChange={(e)=>setPhoneNumber(e.target.value)}
                   style={{
                     border: "1px solid black",
                     width: "70%",
