@@ -1,14 +1,8 @@
 import React, { useState } from 'react';
- 
+import {Link, Navigate, useNavigate} from 'react-router-dom'
 function Signup() {
-  // const [email, setEmail] = useState(true);
-  // const [password, setPassword] = useState(true);
-  // const [confirmPassword, setConfirmPassword] = useState(true);
-  // const [phoneNumber, setPhoneNumber] = useState(true);
-  // const[lastName,setlastName]=useState(true);
-  // const[firstname,setfirstname]=useState(true);
-
-
+  // const history=useHistory();
+  const navigator = useNavigate();
   const [email, setEmail] = useState(true);
   const [password, setPassword] = useState(true);
   const [confirmPassword, setConfirmPassword] = useState(true);
@@ -38,6 +32,8 @@ function Signup() {
         if (response.ok) {
           // Signup successful, handle redirection or other actions
           console.log('Signup successful');
+          navigator('/login');
+        
         } else {
           // Handle signup failure
           console.log('Signup failed');

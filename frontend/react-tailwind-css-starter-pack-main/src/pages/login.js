@@ -9,6 +9,7 @@ import { useState } from 'react'
 import {Link, Navigate, useNavigate} from 'react-router-dom'
 // initTE({ Input, Ripple });
 export default function Example() {
+  const navigator=useNavigate();
   const [email, setEmail] = useState('')
   const [password, setPassword] = useState('')
   const onSubmit = async (e) => {
@@ -30,6 +31,7 @@ export default function Example() {
       if (response.ok) {
         // Request was successful
         const responseData = await response.json(); // Parse response JSON
+        navigator('/getallone')
         console.log('Response Data:', responseData);
       } else {
         // Handle error case
