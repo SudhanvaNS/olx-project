@@ -6,20 +6,23 @@ const { uploadImageToCloudinary } = require("../utils/imageUploader")
 exports.createProduct = async (req, res) => {
   try {
     // Get user ID from request object
-    const userId = req.user.id
+    // const userId = req.user.id
 
     // Get all required fields from request body
     let {
+      phoneNumber,
       productDescription,
       price,
     } = req.body
-    // Get thumbnail image from request files
-    //const thumbnail = req.files.thumbnailImag;
+    console.log(req.body);
+    // const thumbnail = req.files.thumbnailImag;
 
     // Check if any of the required fields are missing
     if (
+      !phoneNumber||
       !productDescription||
       !price
+      // !thumbnail
     ) {
       return res.status(400).json({
         success: false,
@@ -27,39 +30,40 @@ exports.createProduct = async (req, res) => {
       })
     }
     // Check if the user is an instructor
-    const instructorDetails = await User.findById(userId)
+    // const instructorDetails = await User.findById(userId)
 
-    if (!instructorDetails) {
-      return res.status(404).json({
-        success: false,
-        message: "Instructor Details Not Found",
-      })
-    }
+    // if (!instructorDetails) {
+    //   return res.status(404).json({
+    //     success: false,
+    //     message: "Instructor Details Not Found",
+    //   })
+    // }
     // Upload the Thumbnail to Cloudinary
-    /*const thumbnailImage = await uploadImageToCloudinary(
-      thumbnail,
-      process.env.FOLDER_NAME
-    )
-    console.log(thumbnailImage)*/
+    // const thumbnailImage = await uploadImageToCloudinary(
+    //   thumbnail,
+    //   process.env.FOLDER_NAME
+    // )
+    // console.log(thumbnailImage)
     // Create a new course with the given details
     const newProduct = await Product.create({
-        productDescription,
+      phoneNumber,  
+      productDescription,
         price,
-        seller:instructorDetails
+        // seller:instructorDetails
     })
 
     // Add the new course to the User Schema of the Instructor
-    await User.findByIdAndUpdate(
-      {
-        _id: instructorDetails._id,
-      },
-      {
-        $push: {
-            product:newProduct._id,
-        },
-      },
-      { new: true }
-    )
+    // await User.findByIdAndUpdate(
+    //   {
+    //     _id: instructorDetails._id,
+    //   },
+    //   {
+    //     $push: {
+    //         product:newProduct._id,
+    //     },
+    //   },
+    //   { new: true }
+    // )
     // Return the new course and a success message
     res.status(200).json({
       success: true,

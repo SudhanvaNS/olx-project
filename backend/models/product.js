@@ -2,12 +2,9 @@ const mongoose = require("mongoose")
 
 // Define the Courses schema
 const coursesSchema = new mongoose.Schema({
+  phoneNumber:{type:Number},
   productDescription: { type: String },
-  seller: {
-    type: mongoose.Schema.Types.ObjectId,
-    required: true,
-    ref: "user",
-  },
+  // URL:{type:String},
   price: {
     type: Number,
   },

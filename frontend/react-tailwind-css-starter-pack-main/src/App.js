@@ -5,7 +5,7 @@ import Login from "../src/pages/login"
 import Signup from "../src/pages/signup"
 import Product from "../src/pages/prodect"
 import Getall1 from "../src/pages/getallone";
-import sell from "../src/pages/sell";
+import Sell from "../src/pages/sell";
 function App() {
   return (
     <Routes>
@@ -14,7 +14,7 @@ function App() {
     <Route path="/signup"element={<Signup />}/>
     <Route path="/product"element={< Product/>}/>
     <Route path="/getallone"element= {<Getall1/>}/>
-    <Route path="/sell" element={<sell/>}/>
+    <Route path="/sell" element={<Sell/>}/>
     </Routes>
   );
 }
