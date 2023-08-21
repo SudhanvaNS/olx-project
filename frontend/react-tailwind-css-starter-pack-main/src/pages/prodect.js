@@ -8,7 +8,8 @@ const product = {
   href: '#',
   breadcrumbs: [
     { id: 1, name: 'Men', href: '#' },
-    { id: 2, name: 'Clothing', href: '#' },
+    { id: 2, name: 'products', href: '/getallone' },
+
   ],
   images: [
     {
@@ -28,20 +29,20 @@ const product = {
       alt: 'Model wearing plain white basic tee.',
     },
   ],
-  colors: [
-    { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
-    { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
-    { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
-  ],
+  //  colors: [
+  // //   { name: 'White', class: 'bg-white', selectedClass: 'ring-gray-400' },
+  // //   { name: 'Gray', class: 'bg-gray-200', selectedClass: 'ring-gray-400' },
+  // //   { name: 'Black', class: 'bg-gray-900', selectedClass: 'ring-gray-900' },
+  // ],
   sizes: [
-    { name: 'XXS', inStock: false },
-    { name: 'XS', inStock: true },
-    { name: 'S', inStock: true },
-    { name: 'M', inStock: true },
-    { name: 'L', inStock: true },
-    { name: 'XL', inStock: true },
-    { name: '2XL', inStock: true },
-    { name: '3XL', inStock: true },
+    // { name: 'XXS', inStock: false },
+    // { name: 'XS', inStock: true },
+    // { name: 'S', inStock: true },
+    // { name: 'M', inStock: true },
+    // { name: 'L', inStock: true },
+    // { name: 'XL', inStock: true },
+    // { name: '2XL', inStock: true },
+    // { name: '3XL', inStock: true },
   ],
   description:
     'The Basic Tee 6-Pack allows you to fully express your vibrant personality with three grayscale options. Feeling adventurous? Put on a heather gray tee. Want to be a trendsetter? Try our exclusive colorway: "Black". Need to add an extra pop of color to your outfit? Our white tee has you covered.',
@@ -61,8 +62,8 @@ function classNames(...classes) {
 }
 
 export default function Example() {
-  const [selectedColor, setSelectedColor] = useState(product.colors[0])
-  const [selectedSize, setSelectedSize] = useState(product.sizes[2])
+  // const [selectedColor, setSelectedColor] = useState(product.colors[0])
+  // const [selectedSize, setSelectedSize] = useState(product.sizes[2])
 
   return (
     <div className="bg-white">
@@ -142,7 +143,7 @@ export default function Example() {
             <p className="text-3xl tracking-tight text-gray-900">{product.price}</p>
 
             {/* Reviews */}
-            <div className="mt-6">
+            {/* <div className="mt-6">
               <h3 className="sr-only">Reviews</h3>
               <div className="flex items-center">
                 <div className="flex items-center">
@@ -162,16 +163,16 @@ export default function Example() {
                   {reviews.totalCount} reviews
                 </a>
               </div>
-            </div>
+            </div> */}
 
             <form className="mt-10">
               {/* Colors */}
               <div>
-                <h3 className="text-sm font-medium text-gray-900">Color</h3>
+                {/* <h3 className="text-sm font-medium text-gray-900">Color</h3> */}
 
-                <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
-                  <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label>
-                  <div className="flex items-center space-x-3">
+                {/* <RadioGroup value={selectedColor} onChange={setSelectedColor} className="mt-4">
+                  <RadioGroup.Label className="sr-only">Choose a color</RadioGroup.Label> */}
+                  {/* <div className="flex items-center space-x-3">
                     {product.colors.map((color) => (
                       <RadioGroup.Option
                         key={color.name}
@@ -198,11 +199,11 @@ export default function Example() {
                       </RadioGroup.Option>
                     ))}
                   </div>
-                </RadioGroup>
+                </RadioGroup> */}
               </div>
 
               {/* Sizes */}
-              <div className="mt-10">
+              {/* <div className="mt-10">
                 <div className="flex items-center justify-between">
                   <h3 className="text-sm font-medium text-gray-900">Size</h3>
                   <a href="#" className="text-sm font-medium text-indigo-600 hover:text-indigo-500">
@@ -261,7 +262,7 @@ export default function Example() {
                     ))}
                   </div>
                 </RadioGroup>
-              </div>
+              </div> */}
 
               <button
                 type="submit"

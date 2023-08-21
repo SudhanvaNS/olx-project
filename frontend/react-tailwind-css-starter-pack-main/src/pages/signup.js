@@ -56,7 +56,7 @@ function Signup() {
 
           {/* <!-- Right column container --> */}
           <div class="mb-12 md:mb-0 md:w-8/12 lg:w-5/12 xl:w-5/12">
-            <form  onSubmit={onSubmit} > 
+            <form  onSubmit={onSubmit} action='/login'> 
               {/* <!--Sign in section--> */}
               <div class="flex flex-row items-center justify-center lg:justify-start">
                 <p class="mb-0 mr-4 text-lg">Sign up</p>
